@@ -3,6 +3,7 @@ from tracemalloc import stop
 from typing import Optional
 from selenium import webdriver
 import time
+import os
 
 def Login(website):
     try:
@@ -56,4 +57,4 @@ if __name__ == "__main__":
     if(start):
         AutoClick()
     else:
-        stop
+        os._exit(0)
