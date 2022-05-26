@@ -22,11 +22,11 @@ def AutoClick():
                 if browser.find_element_by_xpath("//*[@class='topic-list']/li[1]"):
                     browser.find_element_by_xpath("//*[@class='topic-list']/li[1]").click()
                     print("========点击选项")
-                    time.sleep(0.7)
+                    time.sleep(0.6)
                     browser.find_element_by_xpath("//*[@id='playTopic-dialog']/div/div[1]/button").click()
                     print("========点击关闭")
-                    time.sleep(0.7)
-                    browser.find_element_by_id("playButton").click()
+                    time.sleep(0.6)
+                    browser.find_element_by_xpath("//*[@id='vjs_container']/div[8]").click()
                     print("========点击继续")
                     print("======点击弹题成功")
                 else:
@@ -39,6 +39,8 @@ def AutoClick():
                 time.sleep(1)
                 if browser.find_element_by_id("playButton").get_attribute("class") == "playButton":
                     print("======检测到本节内容已播完，点击播放下一节内容")
+                    browser.find_element_by_xpath("//*[@id='vjs_container']/div[8]").click()
+                    time.sleep(0.5)
                     browser.find_element_by_id("nextBtn").click()
                     time.sleep(2)
                     browser.find_element_by_id("playButton").click()
